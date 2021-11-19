@@ -1,0 +1,5 @@
+#!/bin/bash
+val=`ifconfig | grep inet | grep 168.8 | cut -d' ' -f10`
+echo $val
+sed -i "s|192.168.200.102|$val|" /etc/docker/daemon.json
+cat /etc/docker/daemon.json | grep "$val"

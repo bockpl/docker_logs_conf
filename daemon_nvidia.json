@@ -1,0 +1,14 @@
+{
+  "log-driver": "syslog",
+  "log-opts": {
+    "syslog-address": "tcp://192.168.200.102:514",
+    "tag": "container_name/{{.Name}}",
+    "syslog-facility": "daemon"
+  },
+  "runtimes": {
+      "nvidia": {
+          "path": "/usr/bin/nvidia-container-runtime",
+          "runtimeArgs": []
+      }
+  }
+}
